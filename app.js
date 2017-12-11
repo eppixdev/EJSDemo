@@ -10,6 +10,16 @@ app.get('/fallinlovewith/:thing', function(req, res) {
     res.render('love.ejs', {thingVar: thing});
 })
 
+app.get('/posts', function(req, res) {
+    var posts = [
+        {title: "Post 1", author: "Susy"},
+        {title: "Post 2", author: "Steve"},
+        {title: "Post 3", author: "Staci"}
+    ]
+    
+    res.render('posts.ejs', {posts: posts});
+})
+
 // tell express to start server
 app.listen(3000, function() {
     console.log('Success');
